@@ -46,14 +46,6 @@ public class GameController : MonoBehaviour
             }
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            hasCollidedWithWall = true;
-            ShowRestartButton();
-        }
-    }
 
     public void RestartGame()
     {

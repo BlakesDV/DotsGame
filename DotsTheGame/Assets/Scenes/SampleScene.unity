@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 882402824}
   m_Layer: 0
   m_Name: PinkBall
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1139,7 +1139,7 @@ GameObject:
   - component: {fileID: 1890590842}
   m_Layer: 0
   m_Name: AquaBall
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1416,7 +1416,7 @@ MonoBehaviour:
   - {fileID: 2042702219}
   patron: {fileID: 0}
   dotsPos: {x: 0, y: 0}
-  dotGO: {fileID: 0}
+  dotGO: {fileID: 1890590841}
 --- !u!114 &2042702219
 MonoBehaviour:
   m_ObjectHideFlags: 0
