@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class GameUI : MonoBehaviour
 {
     [SerializeField] private GameObject restartButton;
-    public int levelNumber;
-    public string levelName;
     private bool hasCollidedWithWall = false;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            hasCollidedWithWall = true;
+            Debug.Log("Muelto");
+            //hasCollidedWithWall = true;
             ShowRestartButton();
         }
     }

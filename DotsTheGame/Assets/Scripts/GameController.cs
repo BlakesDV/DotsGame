@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public GameUI[] levels; // Array de niveles
-    public ScriptablesObjects patron; // Array de niveles
     private int currentLevelIndex = 0;
 
     public static GameController Instance { get; private set; }
@@ -27,7 +26,7 @@ public class GameController : MonoBehaviour
 
     void LoadLevel(int levelIndex)
     {
-        Debug.Log("Cargando nivel: " + levels[levelIndex].levelName);
+        Debug.Log("Cargando nivel: " + levels[levelIndex]);
     }
 
     void OnTriggerEnter(Collider other)
@@ -40,8 +39,7 @@ public class GameController : MonoBehaviour
                 LoadLevel(currentLevelIndex);
             }
             else
-            {
-               
+            {             
                 Debug.Log("¡Has completado todos los niveles!");
             }
         }
@@ -49,7 +47,6 @@ public class GameController : MonoBehaviour
 
     public void RestartGame()
     {
-        //restart the scene by reloading the currently active scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 }
