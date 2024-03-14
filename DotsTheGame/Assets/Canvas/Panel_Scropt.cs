@@ -12,7 +12,6 @@ public class Panel_Scropt : MonoBehaviour
     public void ClosePanel()
     {
         GetComponent<Animator>().SetTrigger("Close");
-
     }
 
     public void SetTimePlay()
@@ -41,10 +40,6 @@ public class Panel_Scropt : MonoBehaviour
     {
         GetComponent<Animator>().SetTrigger("OpenGameOver");
     }
-
-
-
-
 
     public void Salir()
     {
