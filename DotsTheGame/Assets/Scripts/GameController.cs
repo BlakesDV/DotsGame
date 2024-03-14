@@ -12,11 +12,22 @@ public class GameController : MonoBehaviour
 
     public static GameController Instance { get; private set; }
     [SerializeField] private Vector2 dotsPos;
-    [SerializeField] private GameObject dotGO;
+    private bool isDrawingLine = false;
 
     void Start()
     {
+        Instance = this;
         LoadLevel(currentLevelIndex);
+    }
+
+    IEnumerator DrawLineAndContinue(int levelIndex)
+    {
+        isDrawingLine = true;
+        Debug.Log("Drawing line...");
+        yield return new WaitForSeconds(3f);
+        isDrawingLine = false;
+        Debug.Log("Line drawn!");
+        Debug.Log("Loading level: " + levels[levelIndex]);
     }
 
     void Update()
@@ -31,16 +42,19 @@ public class GameController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Circle"))
+        if (!isDrawingLine && other.CompareTag("Circle"))
         {
-            currentLevelIndex++;
-            if (currentLevelIndex < levels.Length)
+            if (other.CompareTag("Circle"))
             {
-                LoadLevel(currentLevelIndex);
-            }
-            else
-            {             
-                Debug.Log("¡Has completado todos los niveles!");
+                currentLevelIndex++;
+                if (currentLevelIndex < levels.Length)
+                {
+                    LoadLevel(currentLevelIndex);
+                }
+                else
+                {
+                    Debug.Log("¡Has completado todos los niveles!");
+                }
             }
         }
     }

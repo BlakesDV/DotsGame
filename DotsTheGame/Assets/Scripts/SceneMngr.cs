@@ -5,15 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneMngr : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.CompareTag("Circle"))
+        {
+            string currentScene = SceneManager.GetActiveScene().name;
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex + 1);
+        }
     }
 }

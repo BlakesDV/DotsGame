@@ -51,6 +51,7 @@ public class DrawLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //crear bool en falso para revisar que la linea no se haya.
         if (Input.GetMouseButtonDown(0))
         {
             CreateLine();
